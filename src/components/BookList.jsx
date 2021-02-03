@@ -5,9 +5,12 @@ import BookDetail from './BookDetail';
 const BookList = () => {
     const { books } = useContext(BookContext)
     return (
-        books.map(book => (
-            <BookDetail key={book.id} book={book} />
-        ))
+        <ul>
+            {books.map(book => (
+                <BookDetail key={book.id} book={book} />
+            ))}
+        </ul>
+
     );
 }
 
