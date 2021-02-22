@@ -3,13 +3,13 @@ import { BookContext } from '../contexts/BookContext';
 import BookDetail from './BookDetail';
 
 const BookList = () => {
-    const { books, addBook } = useContext(BookContext)
+    const { books, dispatch } = useContext(BookContext)
     const [title, setTitle] = useState("");
     const [author, setAuthor] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        addBook(title, author);
+        dispatch({type: 'ADD_BOOK', payload: {title, author}});
         setTitle("");
         setAuthor("");
     }
