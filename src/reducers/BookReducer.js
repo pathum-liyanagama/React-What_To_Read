@@ -9,6 +9,7 @@ const BookReducer = (state, action) => {
                 author: action.payload.author,
                 id: uuid()
             }
+
             return [...state, newBook];
 
         case 'REMOVE_BOOK':
